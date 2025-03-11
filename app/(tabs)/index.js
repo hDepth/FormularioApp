@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View, Text, TextInput, Button } from 'react-native';
+import { Image, Platform, View, Text, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -7,9 +7,11 @@ import { ThemedView } from '@/components/ThemedView';
 import styles from '../../src/css/styles';
 
 export default function App() {
-
+  const [nomeProduto, setNomeProduto] = useState('');
   const [valorOriginal, setValorOriginal] = useState('');
   const [porcentagem, setPorcentagem] = useState('');
+  const [resultado, setResultado] = useState(null);
+  const [erro, setErro] = useState('');
   const [novoValor, setNovoValor] = useState(null);
 
   const calcularAumento = () => {
